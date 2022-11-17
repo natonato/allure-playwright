@@ -19,6 +19,13 @@ test('homepage has title and links to intro page', async ({ page }) => {
     await expect(page).toHaveURL(/.*intro/);
 });
 
+test('Success test 2', async ({ page }) => {
+    await page.goto('https://playwright.dev/');
+
+    // Expect a title "to contain" a substring.
+    await expect(page).toHaveTitle(/Playwright/);
+});
+
 test('Must fail', async ({ page }) => {
     await page.goto('https://playwright.dev/');
 
