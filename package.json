@@ -4,10 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx playwright test",
+        "test": "(npx playwright test || true)",
         "report": "allure generate my-allure-results -o my_generated_report --clean",
         "start": "allure open my_generated_report",
-        "o": "(npm run test || true) && npm run report && npm run start"
+        "o": "npm run test && npm run report && npm run start"
     },
     "keywords": [],
     "author": "",
