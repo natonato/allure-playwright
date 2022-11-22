@@ -56,6 +56,24 @@ jobs:
         #allure_history: allure-history
         #keep_reports: 20
 
+    - name: copy customTab
+      env:
+          SRC_FOLDER_PATH: 'custom'
+          TARGET_BRANCH: 'gh-pages'
+          ORIGIN_BRANCH: 'main'
+          RUN: ${{github.run_number}}
+      run: |
+          files=$(find $SRC_FOLDER_PATH -type f) # get the file list
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git fetch                         # fetch branches
+          git checkout $TARGET_BRANCH       # checkout to your branch
+          git checkout ${ORIGIN_BRANCH} -- $files # copy files from the source branch
+          cp -R -Force custom/* ${RUN}
+          git add -A
+          git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+          git push origin $TARGET_BRANCH # push to remote branch
+
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
