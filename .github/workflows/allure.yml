@@ -67,10 +67,10 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
-          git switch ${TARGET_BRANCH}
+          # git switch ${TARGET_BRANCH}
           git checkout ${ORIGIN_BRANCH} -- $files # copy files from the source branch
           ls -al
-          cp -Rf custom/* ${RUN}
+          sudo cp -Rf custom/* generated-allure-report
           git add -A
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
