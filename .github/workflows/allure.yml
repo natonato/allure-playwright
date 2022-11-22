@@ -67,7 +67,6 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${ORIGIN_BRANCH} -- $files # copy files from the source branch
           cp -R -Force custom/* ${RUN}
           git add -A
