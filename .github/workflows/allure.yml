@@ -68,7 +68,8 @@ jobs:
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
           git checkout ${ORIGIN_BRANCH} -- $files # copy files from the source branch
-          cp -Rf custom/* ${RUN}
+          ls -al
+          cp -Rf custom/* generated-allure-report
           git add -A
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
