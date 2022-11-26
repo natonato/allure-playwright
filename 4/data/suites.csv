@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:04 GMT 2022","3520","chromium","","","","","homepage has title and links to intro page",""
-"passed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:06 GMT 2022","5991","firefox","","","","","homepage has title and links to intro page",""
-"failed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:11 GMT 2022","11003","firefox","","","","","Must fail",""
-"failed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:09 GMT 2022","9059","webkit","","","","","Must fail",""
-"failed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:08 GMT 2022","8003","chromium","","","","","Must fail",""
-"passed","Thu Nov 17 13:59:00 GMT 2022","Thu Nov 17 13:59:06 GMT 2022","5446","webkit","","","","","homepage has title and links to intro page",""
