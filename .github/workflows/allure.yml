@@ -70,10 +70,10 @@ jobs:
           git switch ${TARGET_BRANCH}
           git checkout ${ORIGIN_BRANCH} -- $files # copy files from the source branch
           ls -al
-          sudo cp -Rf custom/* allure-history
-          ls -al allure-history
-          git add allure-history
-          git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+          sudo cp -Rf custom/* allure-history/${RUN}
+          ls -al allure-history/${RUN}
+          # git add allure-history
+          # git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
           # git push origin $TARGET_BRANCH # push to remote branch
           
     - name: Deploy report to Github Pages
